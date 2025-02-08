@@ -1,0 +1,165 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "definitions": {
+        "Actor": {
+            "additionalProperties": false,
+            "properties": {
+                "alias": {
+                    "type": "string"
+                },
+                "align": {
+                    "type": "string"
+                },
+                "bgColour": {
+                    "type": "string"
+                },
+                "bold": {
+                    "type": "boolean"
+                },
+                "borderColour": {
+                    "type": "string"
+                },
+                "borderDash": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "borderWidth": {
+                    "type": "string"
+                },
+                "fgColour": {
+                    "type": "string"
+                },
+                "fontFamily": {
+                    "type": "string"
+                },
+                "fontSizePx": {
+                    "type": "number"
+                },
+                "italic": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "padding": {
+                    "type": "number"
+                },
+                "spacing": {
+                    "type": "number"
+                },
+                "vpadding": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "alias",
+                "name"
+            ],
+            "type": "object"
+        },
+        "Comment": {
+            "additionalProperties": false,
+            "properties": {
+                "align": {
+                    "type": "string"
+                },
+                "bgColour": {
+                    "type": "string"
+                },
+                "bold": {
+                    "type": "boolean"
+                },
+                "borderColour": {
+                    "type": "string"
+                },
+                "borderDash": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "borderWidth": {
+                    "type": "string"
+                },
+                "fgColour": {
+                    "type": "string"
+                },
+                "fontFamily": {
+                    "type": "string"
+                },
+                "fontSizePx": {
+                    "type": "number"
+                },
+                "italic": {
+                    "type": "boolean"
+                },
+                "padding": {
+                    "type": "number"
+                },
+                "spacing": {
+                    "type": "number"
+                },
+                "vpadding": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "spacing"
+            ],
+            "type": "object"
+        },
+        "Params": {
+            "additionalProperties": false,
+            "properties": {
+                "comment": {
+                    "$ref": "#/definitions/Comment"
+                },
+                "globalSpacing": {
+                    "type": "number"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "properties": {
+        "actors": {
+            "items": {
+                "$ref": "#/definitions/Actor"
+            },
+            "type": "array"
+        },
+        "params": {
+            "$ref": "#/definitions/Params"
+        },
+        "title": {
+            "anyOf": [
+                {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "actors"
+    ],
+    "type": "object"
+}
+
